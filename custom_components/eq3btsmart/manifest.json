@@ -4,7 +4,7 @@
   "documentation": "https://www.home-assistant.io/integrations/eq3btsmart",
   "requirements": ["construct==2.10.56", "python-eq3bt==0.1.12"],
   "codeowners": ["@rytilahti"],
-  "version": "0.0.3"
+  "version": "0.0.3",
   "iot_class": "local_polling",
   "loggers": ["bluepy", "eq3bt"]
 }
