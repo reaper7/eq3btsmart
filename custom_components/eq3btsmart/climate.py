@@ -4,7 +4,6 @@ from datetime import datetime
 import logging
 from typing import Optional
 
-from bluepy.btle import BTLEException  # pylint: disable=import-error, no-name-in-module
 import eq3bt as eq3  # pylint: disable=import-error
 import voluptuous as vol
 
@@ -518,7 +517,7 @@ class EQ3BTSmartThermostat(ClimateEntity, RestoreEntity):
         try:
             self._thermostat.update()
             self.set_error(None)
-        except BTLEException as ex:
+        except eq3.BackendException as ex:
             self.set_error(ex)
             _LOGGER.warning("%s - Updating the state failed: %s", self._name, ex)
 
@@ -531,7 +530,7 @@ class EQ3BTSmartThermostat(ClimateEntity, RestoreEntity):
         try:
             self._thermostat.mode = mode
             self.set_error(None)
-        except BTLEException as ex:
+        except eq3.BackendException as ex:
             self.set_error(ex)
             _LOGGER.warning("%s - Setting the state failed: %s", self._name, ex)
 
