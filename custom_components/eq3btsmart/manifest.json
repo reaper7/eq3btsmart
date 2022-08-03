@@ -1,10 +1,11 @@
 {
   "domain": "eq3btsmart",
-  "name": "EQ3 Bluetooth Smart Thermostats",
+  "name": "eQ-3 Bluetooth Smart Thermostats",
   "documentation": "https://www.home-assistant.io/integrations/eq3btsmart",
-  "requirements": ["bleak==0.14.3", "click==7.1.2", "construct==2.10.68", "python-eq3bt==0.2"],
+  "requirements": ["construct==2.10.56", "python-eq3bt==0.2"],
+  "dependencies": ["bluetooth"],
   "codeowners": ["@rytilahti"],
   "version": "0.0.6",
   "iot_class": "local_polling",
-  "loggers": ["eq3bt"]
+  "loggers": ["bleak", "eq3bt"]
 }
